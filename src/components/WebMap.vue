@@ -13,6 +13,8 @@ export default {
 </script>
 
 <style lang="scss">
+$icomoon-font-path: "./assets/esri/themes/base/icons/fonts" !default;
+$calcite-fonts-path: "./assets/esri/themes/base/fonts/fonts/" !default;
 @import "~@arcgis/core/assets/esri/themes/light/main.scss";
 .map-div {
     padding: 0;

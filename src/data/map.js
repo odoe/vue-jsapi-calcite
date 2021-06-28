@@ -1,7 +1,10 @@
+import config from '@arcgis/core/config';
 import MapView from '@arcgis/core/views/MapView';
 import WebMap from '@arcgis/core/WebMap';
 import Expand from '@arcgis/core/widgets/Expand';
 import Legend from '@arcgis/core/widgets/Legend';
+
+config.assetsPath = './assets';
 
 export const webmap = new WebMap({
     portalItem: {
