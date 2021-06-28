@@ -5,20 +5,30 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
+    "postinstall": "npm run copy"
   },
   "dependencies": {
+    "@arcgis/core": "^4.20.0-next.20210628",
+    "@esri/calcite-components": "^1.0.0-beta.58",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@stencil/webpack": "0.0.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^6.4.1",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "ncp": "^2.0.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^10.2.0"
   },
   "eslintConfig": {
     "root": true,

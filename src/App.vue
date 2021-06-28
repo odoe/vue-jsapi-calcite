@@ -1,26 +1,58 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <WebMap />
+  <div class="footer">
+    <calcite-action
+      appearance="solid"
+      dir="ltr"
+      icon="beaker"
+      label="Label"
+      scale="m"
+      text="Text"
+      text-enabled=""
+      class="calcite-theme-light"
+    ></calcite-action>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {
+  applyPolyfills,
+  defineCustomElements
+} from "@esri/calcite-components/dist/loader";
+import WebMap from './components/WebMap.vue'
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WebMap
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 0em;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  font-feature-settings: "liga" 1, "calt" 0;
+}
+
+#app{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  width: 100%;
+  height: 25%;
 }
 </style>
