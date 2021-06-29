@@ -1,17 +1,13 @@
 <template>
-  <WebMap />
-  <div class="footer">
-    <calcite-action
-      appearance="solid"
-      dir="ltr"
-      icon="beaker"
-      label="Label"
-      scale="m"
-      text="Text"
-      text-enabled=""
-      class="calcite-theme-light"
-    ></calcite-action>
-  </div>
+  <calcite-shell>
+    <slot name="shell-header">
+      <header class="header">
+        <calcite-icon icon="beaker" scale="m" aria-hidden="true"></calcite-icon>
+        <h2 class="heading">ArcGIS Vue and Calcite</h2>
+      </header>
+    </slot>
+    <WebMap />
+  </calcite-shell>
 </template>
 
 <script>
@@ -32,8 +28,8 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
+@import "~@esri/calcite-colors/dist/colors"; // calcite colors
 html,
 body {
   padding: 0;
@@ -51,8 +47,15 @@ body {
   display: flex;
   flex-direction: column;
 }
-.footer {
-  width: 100%;
-  height: 25%;
+.header {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: $h-bb-060;
+  padding: 0.5rem;
+}
+
+.heading {
+  margin: 0.5rem;
 }
 </style>

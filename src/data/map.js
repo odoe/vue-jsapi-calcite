@@ -17,9 +17,6 @@ export const view = new MapView({
     map: webmap
 });
 
-// add a legend widget instance to the view
-// and set the style to 'card'. This is a
-// responsive style, which is good for mobile devices
 export const legend = new Expand({
     content: new Legend({
         view,
