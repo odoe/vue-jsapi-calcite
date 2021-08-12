@@ -3,6 +3,7 @@ import MapView from '@arcgis/core/views/MapView';
 import WebMap from '@arcgis/core/WebMap';
 import Expand from '@arcgis/core/widgets/Expand';
 import Legend from '@arcgis/core/widgets/Legend';
+import Print from '@arcgis/core/widgets/Print';
 
 config.assetsPath = './assets';
 
@@ -41,3 +42,8 @@ export const initialize = (container) => {
             console.warn('An error in creating the map occured:', error);
         });
 };
+
+export function initializePrint(container) {
+    const print = new Print({ view, container });
+    return print;
+}

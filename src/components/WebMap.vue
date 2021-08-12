@@ -57,7 +57,7 @@ $include_LineOfSight: false !default;
 $include_Measurement: false !default;
 $include_NavigationToggle: false !default;
 $include_OpacitySlider: false !default;
-$include_Print: false !default;
+$include_Print: true !default;
 $include_ScaleBar: false !default;
 $include_ScaleRangeSlider: false !default;
 $include_Search: false !default;

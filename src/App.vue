@@ -6,25 +6,26 @@
         <h2 class="heading">ArcGIS Vue and Calcite</h2>
       </header>
     </slot>
+    <Print />
     <WebMap />
   </calcite-shell>
 </template>
 
 <script>
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "@esri/calcite-components/dist/loader";
-import WebMap from './components/WebMap.vue'
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+import WebMap from './components/WebMap.vue';
+import Print from './components/Print.vue';
+import '@esri/calcite-components/dist/custom-elements/bundles/shell';
+import '@esri/calcite-components/dist/custom-elements/bundles/icon';
+import { commitAssetPath } from '@arcgis/core/widgets/support/componentsUtils';
+
+commitAssetPath();
 
 export default {
   name: 'App',
   components: {
-    WebMap
+    WebMap,
+    Print
   }
 }
 </script>
@@ -47,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .header {
   display: flex;
   align-items: center;
